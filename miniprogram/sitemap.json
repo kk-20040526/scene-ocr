@@ -1,0 +1,9 @@
+{
+  "desc": "sitemap for OCR miniprogram",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

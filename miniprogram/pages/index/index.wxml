@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="title">光学字符识别系统</view>
+
+  <view class="card">
+    <view class="label">推理服务器地址</view>
+    <view class="server-row">
+      <input class="server-input" value="{{serverBase}}" bindinput="onServerInput"
+        placeholder="http://电脑IP:8000" />
+      <button class="mini-btn" size="mini" bindtap="saveServer">保存</button>
+    </view>
+  </view>
+
+  <view class="btn-row">
+    <button class="btn-primary big-btn" bindtap="chooseImage" loading="{{loading}}">
+      拍照 / 选择图片
+    </button>
+  </view>
+
+  <view class="card" wx:if="{{annotated}}">
+    <view class="section-title">检测结果（带文字框）</view>
+    <image class="result-img" src="{{annotated}}" mode="widthFix"
+      bindtap="previewImage" show-menu-by-longpress="true"></image>
+  </view>
+
+  <view class="card" wx:if="{{count > 0}}">
+    <view class="section-title">识别文本（{{count}} 条）</view>
+    <view class="text-item" wx:for="{{results}}" wx:key="index">
+      <view class="text-idx">{{index + 1}}</view>
+      <view class="text-main">
+        <view class="text-content">{{item.text || '（未识别）'}}</view>
+        <view class="text-score">置信度 {{item.score}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{annotated && count === 0}}">
+    <view class="empty">未检测到文字</view>
+  </view>
+</view>
