@@ -6,7 +6,7 @@
 
 ## 演示视频
 
-[点击观看项目演示视频](https://github.com/kk-20040526/scene-ocr/releases/tag/v1.0.0)
+[点击观看项目演示视频（video/ocr-demo.mp4）](video/ocr-demo.mp4)
 
 视频覆盖：开发者工具内选图识别、带框标注与置信度列表展示，以及手机真机通过局域网地址联调的过程。
 
